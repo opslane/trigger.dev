@@ -3,3 +3,4 @@ codebase:
 
 app:
   installCommand: pnpm install --no-frozen-lockfile
+  command: none
