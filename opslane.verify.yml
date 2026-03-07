@@ -1,0 +1,5 @@
+codebase:
+  packageManager: pnpm
+
+app:
+  installCommand: pnpm install --no-frozen-lockfile
