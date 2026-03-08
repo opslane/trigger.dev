@@ -1,5 +1,15 @@
 codebase:
   packageManager: pnpm
+  exampleTest: |
+    async function main() {
+      console.log("__VERIFY_TESTS_STARTED__");
+      // example: test a utility from the repo
+      const { someUtil } = await import("../packages/core/src/v3/some-util.js");
+      const result = someUtil("input");
+      if (result \!== "expected") throw new Error("Got " + result);
+      console.log("PASS");
+    }
+    main().catch((e) => { console.error(e); process.exit(1); });
 
 app:
   installCommand: pnpm install --no-frozen-lockfile
